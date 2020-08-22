@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "UMD",
+    "target": "ES5",
+    "lib": ["ESNext", "DOM"],
+    "outDir": "dist"
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["node_modules", "lib/**/*.spec.ts"]
+}
