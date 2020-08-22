@@ -13,7 +13,11 @@
     "type": "git",
     "url": "git+https://github.com/benqus/pubs2.git"
   },
-  "keywords": [ "context", "action", "pubsub" ],
+  "keywords": [
+    "context",
+    "action",
+    "pubsub"
+  ],
   "author": "Bence Kormos <kormos.bence@gmail.com>",
   "license": "MIT",
   "bugs": {
