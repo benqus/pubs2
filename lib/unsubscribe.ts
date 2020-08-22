@@ -2,16 +2,17 @@ export default function<Context, Action, Subscription>(
   subs: Map<Context, Map<Action, Set<Subscription>>>
 ) {
 
-  function _remove(o: Context): void {
-    subs.get(o).forEach((set) => set.clear());
-    subs.get(o).clear();
+  function _removeContext(o: Context): void {
+    const actions: Map<Action, Set<Subscription>> = subs.get(o);
+    actions.forEach((set: Set<Subscription>) => set.clear());
+    actions.clear();
     subs.delete(o);
   }
 
   return function unsubscribe([ o, a ]: SubDescriptor<Context, Action>, fn?: Subscription): void {
     if (!subs.has(o)) return;
     // remove all object-space subscriptions
-    if (!a) _remove(o);
+    if (!a) _removeContext(o);
     // remove action-space subscriptions
     const actions: Map<Action, Set<Subscription>> = subs.get(o);
     const subscriptions: Set<Subscription> = actions.get(a);
@@ -20,6 +21,6 @@ export default function<Context, Action, Subscription>(
     // clean up action-space
     if (subscriptions.size === 0) actions.delete(a);
     // clean up object-space
-    if (subs.get(o).size === 0) subs.delete(o);
+    if (actions.size === 0) subs.delete(o);
   }
 }

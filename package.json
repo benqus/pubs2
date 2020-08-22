@@ -1,9 +1,9 @@
 {
   "name": "pubs2",
-  "version": "0.1.0",
-  "description": "Object Action PubSub",
+  "version": "1.0.0",
+  "description": "Minimalistic context and action based PubSub",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "tsc": "tsc --pretty",
     "build": "npm test && npm run tsc",
@@ -11,17 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/benqus/pubs.git"
+    "url": "git+https://github.com/benqus/pubs2.git"
   },
-  "keywords": [
-    "pubsub"
-  ],
+  "keywords": [ "context", "action", "pubsub" ],
   "author": "Bence Kormos <kormos.bence@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/benqus/pubs/issues"
+    "url": "https://github.com/benqus/pubs2/issues"
   },
-  "homepage": "https://github.com/benqus/pubs#readme",
+  "homepage": "https://github.com/benqus/pubs2#readme",
   "devDependencies": {
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.2",
