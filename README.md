@@ -8,10 +8,14 @@ It's like a reducer but for any object instance, not just for state management.
 
 Cheers! 🍻
 
+### Install
+
+`npm install pubs2`
+
 ### Usage
 
 ```ts
-import pubs from 'pubs';
+import pubs from 'pubs2';
 
 type Actions = "update";
 const s = pubs<object, Actions, any>();
@@ -24,11 +28,11 @@ const onupdate = s.subscribe([anObject, "update"],
   });
 
 // publish something
-s.publish([object, "update"], "payload can be anything");
+s.publish([anObject, "update"], "payload can be anything");
 
 // unsubscribe
-s.unsubscribe([object, "update"], onupdate));
+s.unsubscribe([anObject, "update"], onupdate));
 
 // or if you remove the "observed" object
-s.unsubscribe([object]);
+s.unsubscribe([anObject]);
 ```
