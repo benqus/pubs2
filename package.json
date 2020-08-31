@@ -7,7 +7,7 @@
   "scripts": {
     "tsc": "tsc --pretty",
     "build": "npm test && npm run tsc",
-    "test": "mocha -r ts-node/register ./lib/*.spec.ts"
+    "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register ./lib/*.spec.ts"
   },
   "repository": {
     "type": "git",

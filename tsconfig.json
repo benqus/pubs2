@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "UMD",
+    "module": "AMD",
     "target": "ES5",
     "lib": ["ESNext", "DOM"],
-    "outDir": "dist"
+    "outFile": "dist/index.js"
   },
   "include": ["lib/**/*.ts"],
   "exclude": ["node_modules", "lib/types.ts", "lib/**/*.spec.ts"]
